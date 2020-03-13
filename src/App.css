@@ -1,38 +1,61 @@
-.App {
-  text-align: center;
+.container-fluid{
+  margin: 0;
+  padding: 0;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.name{
+  padding: 10px;
 }
+.img-wrapper{
+  margin: 0;
+  padding: 0!important;
+  position: fixed!important;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.portfolio-img{
+  height: 450px;
+  width: 635px;
+}
+.info-wrapper {
+  background-image: linear-gradient(90deg, #ffffff, #2d83d1);
+  margin-bottom: 20px!important;
+  padding-left: 20px;
+}
+.educations, .experiences, .projects {
+  background-image: linear-gradient(45deg, #abc0d2, #378ad300);
+  padding: 16px 17px 1px;
+  margin-bottom: 5px;
+}
+.skills {
+  display: inline-block;
+  margin: 5px;
+  padding: 3px 20px;
+  border: 1px solid #bbb;
+  border-radius: 3px;
+  background: #fff;
+  box-shadow: 1px 1px 1px;
+}
+.intrests{
+  display: inline-block;
+  margin: 5px;
+  padding: 3px 20px;
+  border: 1px solid #000;
+  border-radius: 3px;
+  /* background: #3387d2; */
+  background-image: linear-gradient(45deg, #3387d2, #cedc5b);
+  box-shadow: 1px 1px 1px #000;
+  color: #fff
+}
+.edit-btn-wrapper{
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
+h4.title {
+  text-align: right;
+  color: #fff;
+  margin-right: 50px;
+  font-size: 26px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.delete{
+  float: right;
+  cursor: pointer;
 }

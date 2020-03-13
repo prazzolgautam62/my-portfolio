@@ -1,0 +1,27 @@
+{
+  "personal": {
+    "name": "Madhuraman Ghimire",
+    "email": "madhuramanghimire@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/thisismrg/"
+  },
+  "educations": [
+    {
+      "degree": "Master in Computer Engineering",
+      "institute": " NCIT, Balkumari, Lalitpur",
+      "date": "2019-Present",
+      "id": 1
+    },
+    {
+      "degree": "Bachelore Engineering in Information Technologies",
+      "institute": "NCIT",
+      "date": "2011-2015",
+      "id": 2
+    },
+    {
+      "degree": "Intermediate In Science",
+      "institute": "CCT, Hattisar, Dharan",
+      "date": "2008-2010",
+      "id": 3
+    }
+  ]
+}
