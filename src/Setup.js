@@ -7,6 +7,7 @@ function Setup() {
     const [education, setEducation] = useState({})
     const [educationList, setEducationList] = useState([{}])
     const [loading, setLoading] = useState(false)
+    const [experience, setExperience] = useState({})
 
     useEffect(() => {
         getPersonal();
@@ -58,6 +59,16 @@ function Setup() {
         getEducationList();
     }
 
+    const handelExperienceChange = (event) => {
+        event.persist();
+        setExperience((experience) => ({
+            ...experience,
+            [event.target.name]: event.target.value
+        }));
+    }
+    const handleExperienceSubmit = async () => {
+        await axios.post(`${server}/experiences`, experience)
+    }
     return (
         <div className="container" style={{ marginTop: "20px" }}>
             <div className="row personal">
@@ -110,13 +121,13 @@ function Setup() {
             <div className="row experience">
                 <div className="col-md-6">
                     <div className="form-group">
-                        <input type="text" className="form-control" id="company" placeholder="Company" />
+                        <input type="text" className="form-control" id="company" placeholder="Company" name="company" onChange={handelExperienceChange}/>
                     </div>
                     <div className="form-group">
-                        <input type="text" className="form-control" id="address" placeholder="Address" />
+                        <input type="text" className="form-control" id="address" placeholder="Address"  name="address" onChange={handelExperienceChange}/>
                     </div>
                     <div style={{ display: "flex", justifyContent: "center" }}>
-                        <button type="submit" className="btn btn-primary">Submit</button>
+                        <button type="submit" className="btn btn-primary" onClick={handleExperienceSubmit}>Submit</button>
                     </div>
                 </div>
                 <div className="col-md-6">

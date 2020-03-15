@@ -6,14 +6,21 @@ const server = 'http://localhost:5000'
 
 function Home() {
     const [personal, setPersonal] = useState({})
+    const [educationList, setEducationList] = useState([])
 
     useEffect(() => {
-       getPersonal();
+        getPersonal();
+        getEducations();
     }, [])
 
     const getPersonal = async () => {
         let res = await axios.get(`${server}/personal`)
         setPersonal(res.data)
+    }
+
+    const getEducations = async () => {
+        let res = await axios.get(`${server}/educations`);
+        setEducationList(res.data)
     }
 
     return (
@@ -36,22 +43,19 @@ function Home() {
                     <div className="info-wrapper">
                         <div className="education-wrapper">
                             <h4 className="title"><b>Education</b></h4>
-                            <div className="educations">
-                                <h5><b>Master in Computer Engineering</b></h5>
-                                <p>NCIT, Balkumari, Lalitpur</p>
-                                <small>2019-Present</small>
-                            </div>
-                            <div className="educations">
-                                <h5><b>Bachelore Engineering in Information Technologies</b></h5>
-                                <p>NCIT, Balkumari, Lalitpur</p>
-                                <small>2011-2015</small>
-                            </div>
 
-                            <div className="educations">
-                                <h5><b>Intermediate In Science</b></h5>
-                                <p>CCT, Hattisar, Dharan</p>
-                                <small>2008-2010</small>
-                            </div>
+
+                            {educationList.map((edu, key) => (
+                                <div className="educations" key={key}>
+                                    <h5><b>{edu.degree}</b></h5>
+                                    <p>{edu.institute}</p>
+                                    <small>{edu.date}</small>
+                                </div>
+                            ))}
+
+
+
+
                         </div>
                         <div className="experience-wrapper">
                             <h4 className="title"><b>Experience</b></h4>
