@@ -1,28 +1,104 @@
 {
   "personal": {
-    "name": "Madhuraman Ghimire",
-    "email": "madhuramanghimire@gmail.com",
-    "linkedin": "https://www.linkedin.com/in/thisismrg/"
+    "name": "Prajwol Gautam",
+    "email": "prazzolgautam@gmail.com",
+    "github": "https://www.github.com/prazzolgautam62/"
   },
   "educations": [
     {
-      "degree": "Master in Computer Engineering",
-      "institute": " NCIT, Balkumari, Lalitpur",
-      "date": "2019-Present",
+      "degree": "Bachelor in Science, Computer Science and Information Technology(BSc.CSIT)",
+      "institute": "Samriddhi College",
+      "date": "2016-2020",
       "id": 1
     },
     {
-      "degree": "Bachelore Engineering in Information Technologies",
-      "institute": "NCIT",
-      "date": "2011-2015",
+      "degree": "Intermediate In Science",
+      "institute": "DAV College, Jawalakhel",
+      "date": "2014-2016",
+      "id": 2
+    }
+  ],
+  "experiences": [
+    {
+      "company": "Company 1",
+      "location": "LocationX, Kathmandu",
+      "id": 1
+    },
+    {
+      "company": "Company 2",
+      "location": "LocationY, Lalitpur",
       "id": 2
     },
     {
-      "degree": "Intermediate In Science",
-      "institute": "CCT, Hattisar, Dharan",
-      "date": "2008-2010",
+      "company": "Company 3",
+      "location": "LocationZ, Bhaktapur",
       "id": 3
     }
   ],
-  "experiences": []
+  "projects": [
+    {
+      "project": "College E-Commerce Project",
+      "technologies": "HTML,CSS,JS",
+      "id": 1
+    },
+    {
+      "project": "Final year Project",
+      "technologies": "HTML,CSS,JS,Django,MySQL",
+      "id": 2
+    },
+    {
+      "project": "Portfolio",
+      "technologies": "React",
+      "id": 3
+    },
+    {
+      "project": "ToDo",
+      "technologies": "React",
+      "id": 4
+    },
+    {
+      "project": "Notepad Application",
+      "technologies": "Java",
+      "id": 5
+    }
+  ],
+  "skills": [
+    {
+      "name": "PHP",
+      "id": 2
+    },
+    {
+      "name": "Laravel",
+      "id": 3
+    },
+    {
+      "name": "Node",
+      "id": 4
+    },
+    {
+      "name": "Bootstrap",
+      "id": 6
+    },
+    {
+      "name": "React",
+      "id": 6
+    }
+  ],
+  "intrests": [
+    {
+      "name": "Music"
+    },
+    {
+      "name": "Travel"
+    },
+    {
+      "name": "Bikes"
+    },
+    {
+      "name": "Technologies"
+    },
+    {
+      "name": "Football"
+    }
+  ]
 }

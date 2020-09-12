@@ -16,12 +16,15 @@
   width: 635px;
 }
 .info-wrapper {
-  background-image: linear-gradient(90deg, #ffffff, #2d83d1);
+  background-image: linear-gradient(90deg, #ffffff, #49cf3d);
   margin-bottom: 20px!important;
   padding-left: 20px;
 }
+
+
+
 .educations, .experiences, .projects {
-  background-image: linear-gradient(45deg, #abc0d2, #378ad300);
+  background-image: linear-gradient(45deg, #acabd2, #378ad300);
   padding: 16px 17px 1px;
   margin-bottom: 5px;
 }
@@ -41,9 +44,9 @@
   border: 1px solid #000;
   border-radius: 3px;
   /* background: #3387d2; */
-  background-image: linear-gradient(45deg, #3387d2, #cedc5b);
+  background-image: linear-gradient(45deg, #4d87b9, #d0e056);
   box-shadow: 1px 1px 1px #000;
-  color: #fff
+  color: #000;
 }
 .edit-btn-wrapper{
   display: flex;
@@ -51,11 +54,22 @@
 }
 h4.title {
   text-align: right;
-  color: #fff;
+  color: rgb(38, 0, 255);
   margin-right: 50px;
   font-size: 26px;
 }
+
+
+
 .delete{
   float: right;
   cursor: pointer;
+  text-align: center;
+  width: 20px;
+  color:white;
+  background:red;
+}
+
+hr.hrclass {
+  border: 1px solid rgb(146, 138, 138);
 }

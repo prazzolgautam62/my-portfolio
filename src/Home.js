@@ -5,23 +5,53 @@ import axios from 'axios';
 const server = 'http://localhost:5000'
 
 function Home() {
-    const [personal, setPersonal] = useState({})
-    const [educationList, setEducationList] = useState([])
+    const [personal, setPersonal] = useState({});
+    const [educationList, setEducationList] = useState([]);
+    const [experienceList, setExperienceList] = useState([]);
+    const [projectList, setProjectList] = useState([]);
+    const [skillList, setSkillList] = useState([]);
+    const [intrestList, setIntrestList] = useState([]);
 
     useEffect(() => {
         getPersonal();
         getEducations();
+        getExperiences();
+        getProjects();
+        getSkills();
+        getIntrests();
     }, [])
 
     const getPersonal = async () => {
         let res = await axios.get(`${server}/personal`)
-        setPersonal(res.data)
+        setPersonal(res.data);
     }
 
     const getEducations = async () => {
         let res = await axios.get(`${server}/educations`);
-        setEducationList(res.data)
+        setEducationList(res.data);
     }
+
+    const getExperiences = async () => {
+        let res = await axios.get(`${server}/experiences`);
+        setExperienceList(res.data);
+    }
+
+    const getProjects = async () => {
+        let res = await axios.get(`${server}/projects`);
+        setProjectList(res.data);
+    }
+
+    const getSkills = async () => {
+        let res = await axios.get(`${server}/skills`);
+        setSkillList(res.data);
+    }
+
+    const getIntrests = async () => {
+        let res = await axios.get(`${server}/intrests`);
+        setIntrestList(res.data);
+    }
+
+
 
     return (
         <div className="container-fluid">
@@ -30,9 +60,9 @@ function Home() {
                     <div className="img-wrapper">
                         <img src={img} className="portfolio-img" />
                         <div className="name">
-                            <h1>{personal.name}</h1>
-                            <b>Eamil: </b><i>{personal.email}</i><br />
-                            <b>Linkedin: </b><u>{personal.linkedin}</u>
+                            <h1><b>{personal.name}</b></h1>
+                            <b>Email: </b><i>{personal.email}</i><br />
+                            <b>Github: </b><u>{personal.github}</u>
                         </div>
                         <div className="edit-btn-wrapper">
                             <a href="/setup"><button className="btn btn-primary">Edit Profile</button></a>
@@ -43,143 +73,52 @@ function Home() {
                     <div className="info-wrapper">
                         <div className="education-wrapper">
                             <h4 className="title"><b>Education</b></h4>
-
-
                             {educationList.map((edu, key) => (
                                 <div className="educations" key={key}>
-                                    <h5><b>{edu.degree}</b></h5>
-                                    <p>{edu.institute}</p>
+                                    <h4><b>{edu.degree}</b></h4>
+                                    <h6>{edu.institute}</h6>
                                     <small>{edu.date}</small>
                                 </div>
                             ))}
-
-
-
-
-                        </div>
+                        </div><br />
                         <div className="experience-wrapper">
                             <h4 className="title"><b>Experience</b></h4>
-                            <div className="experiences">
-                                <h5><b>Dream Big Workshop</b></h5>
-                                <small>Sankhamul, Kathmandu</small>
-                            </div>
-                            <div className="experiences">
-                                <h5><b>Wesinory Team</b></h5>
-                                <small>Sankhamul, Kathmandu</small>
-                            </div>
-                            <div className="experiences">
-                                <h5><b>Insight Workshop</b></h5>
-                                <small>Naxal, Kathmandu</small>
-                            </div>
-
-                            <div className="experiences">
-                                <h5><b>F1 Soft International</b></h5>
-                                <small>Hattisar, Kathmandu</small>
-                            </div>
-
-                            <div className="experiences">
-                                <h5><b>Socail Aves</b></h5>
-                                <small>Jaulakhel, Lalitpur</small>
-                            </div>
-
-                            <div className="experiences">
-                                <h5><b>Tree Tech Solution</b></h5>
-                                <small>Gwarko, Lalitpur</small>
-                            </div>
-                        </div>
+                            {experienceList.map((exp, key) => (
+                                <div className="experiences" key={key}>
+                                    <h4><b>{exp.company}</b></h4>
+                                    <p>{exp.location}</p>
+                                </div>
+                            ))}
+                        </div><br />
                         <div className="project-wrapper">
                             <h4 className="title"><b>Projects</b></h4>
-                            <div className="projects">
-                                <h5><b>Double Entry Accounting System</b></h5>
-                                <small><i>Django</i></small>
-                            </div>
-                            <div className="projects">
-                                <h5><b>Gimmy</b></h5>
-                                <small><i>React, Node, Firebase</i></small>
-                            </div>
-                            <div className="projects">
-                                <h5><b>Inventory</b></h5>
-                                <small><i>Laravel</i></small>
-                            </div>
+                            {projectList.map((proj, key) => (
 
-                            <div className="projects">
-                                <h5><b>Sumulya.com</b></h5>
-                                <small><i>React Native</i></small>
-                            </div>
-                        </div>
+
+                                <div className="projects" key={key}>
+                                    <h4><b>{proj.project}</b></h4>
+                                    <p><i>{proj.technologies}</i></p>
+                                </div>
+                            ))}
+                        </div><br />
                         <div className="skill-wrapper">
                             <h4 className="title"><b>Skills</b></h4>
-                            <div className="skills">
-                                Python
-                        </div>
+                            {skillList.map((skl, key) => (
+                                <div className="skills" key={key}>
+                                    <b>{skl.name}</b>
+                                </div>
+                            ))}
 
-                            <div className="skills">
-                                Django
-                        </div>
-
-                            <div className="skills">
-                                PHP
-                        </div>
-
-                            <div className="skills">
-                                Laravel
-                        </div>
-
-                            <div className="skills">
-                                Node
-                        </div>
-
-                            <div className="skills">
-                                React
-                        </div>
-                            <div className="skills">
-                                React Native
-                        </div>
-
-                            <div className="skills">
-                                Firebase
-                        </div>
-
-                            <div className="skills">
-                                JQuery
-                        </div>
-
-                            <div className="skills">
-                                Bootstrap
-                        </div>
-                            <div className="skills">
-                                AWS
-                        </div>
-
-                        </div>
+                        </div><br />
                         <div className="intrest-wrapper">
                             <h4 className="title"><b>Interests</b></h4>
-                            <div className="intrests">
-                                Technologies
-                        </div>
+                            {intrestList.map((int, key) => (
 
-                            <div className="intrests">
-                                Space
-                        </div>
 
-                            <div className="intrests">
-                                Music
-                        </div>
-
-                            <div className="intrests">
-                                Culture
-                        </div>
-
-                            <div className="intrests">
-                                Humanity
-                        </div>
-
-                            <div className="intrests">
-                                World
-                        </div>
-                            <div className="intrests">
-                                Universe
-                        </div>
+                                <div className="intrests">
+                                    <b>{int.name}</b>
+                                </div>
+                            ))}
                         </div>
 
                     </div>
